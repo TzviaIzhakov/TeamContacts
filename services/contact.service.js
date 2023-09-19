@@ -6,11 +6,10 @@ _createContacts();
 
 export const contactService = {
   query,
-  get,
+  getById,
   remove,
   save,
   getEmptyContact,
-  getById
   //   getDefaultFilter,
 };
 
@@ -29,15 +28,8 @@ function query(filterBy = {}) {
   });
 }
 
-function get(contactId) {
-  return storageService.get(CONTACT_KEY, contactId).then((contact) => {
-    // contact = _setNextPrevCar_id(contact);
-    return contact;
-  });
-}
-
 function getById(contactId) {
-  return storageService.get(CONTACT_KEY, contactId)
+  return storageService.get(CONTACT_KEY, contactId);
 }
 
 function remove(contactId) {
