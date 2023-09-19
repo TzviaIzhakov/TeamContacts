@@ -4,6 +4,8 @@ const { Link, NavLink } = ReactRouterDOM;
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js';
 import { removeContactOptimistic } from '../store/actions/contact.actions.js';
 import { loadContacts, saveContact } from '../store/actions/contact.actions.js';
+import { ContactList } from '../cmps/ContactList.jsx';
+
 export function ContantIndex() {
   const conts = useSelector((storeState) => storeState.contactModule.contacts);
 

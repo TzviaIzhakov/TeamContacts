@@ -10,29 +10,33 @@ export function ContactDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    loadcontact();
+    loadContact();
   }, [contactId]);
 
-  function loadcontact() {
+  function loadContact() {
+    // console.log('pp');
     contactService
       .getById(contactId)
-      .then((contact) => setContact(contact))
+      .then((contact) => {
+        setContact(contact);
+      })
       .catch((err) => {
         console.log('Had issues in contact details', err);
         showErrorMsg('Cannot load contact');
         navigate('/contact');
       });
   }
-  const { firstName, lastName, email, phone, desc } = contact;
+
+  // const { firstName, lastName, email, phone, desc } = contact;
   if (!contact) return <div>Loading...</div>;
   return (
     <section className="contact-details">
       <h1>
-        name:{firstName} {lastName}
+        name:{contact.firstName} {contact.lastName}
       </h1>
-      <h5>email:{email}</h5>
-      <h6>phone: {phone} </h6>
-      <p>about:{desc}</p>
+      <h5>email:{contact.email}</h5>
+      <h5>phone: {contact.phone} </h5>
+      <p>about:{contact.desc}</p>
 
       <Link to="/contact">Back</Link>
     </section>
