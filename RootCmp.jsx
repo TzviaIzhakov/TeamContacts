@@ -16,7 +16,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact:contactId" element={<ContactDetails />} />
-
+          <Route path="/edit:contactId" element={<ContactEdit />} />
           <Route path="/contact" element={<ContantIndex />} />
         </Routes>
       </section>
