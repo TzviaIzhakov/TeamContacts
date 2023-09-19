@@ -13,6 +13,7 @@ export function App() {
     <Provider store={store}>
       <Router>
         <section className="main-layout app">
+          <span></span>
           <AppHeader />
           <Routes>
             <Route path="/" element={<Home />} />
