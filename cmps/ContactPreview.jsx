@@ -1,11 +1,15 @@
-import { ContactDetails } from '../views/ContactDetails.jsx';
-
+const { Link } = ReactRouterDOM;
 export function ContactPreview({ contact }) {
   return (
-    <article>
-      <h1>{contact.firstName}</h1>
-      <h2>email: {contact.email}</h2>
-      <h2>phone: {contact.phone}</h2>
-    </article>
+    <tr key={contact._id}>
+      <td>{contact.firstName}</td>
+      <td>{contact.email}</td>
+      <td>{contact.phone}</td>
+      <td>
+        <button>
+          <Link to={`/contact/${contact._id}`}>Details</Link>
+        </button>
+      </td>
+    </tr>
   );
 }
