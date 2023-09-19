@@ -6,7 +6,7 @@ import { ContactDetails } from './views/ContactDetails.jsx';
 import { Home } from './views/Home.jsx';
 import { MailIndex } from './apps/mail/views/MailIndex.jsx';
 import { NoteIndex } from './apps/note/views/NoteIndex.jsx';
-import { ContantIndex } from './cmps/ContactIndex.jsx';
+import { ContantIndex } from './views/ContactIndex.jsx';
 
 export function App() {
   return (
