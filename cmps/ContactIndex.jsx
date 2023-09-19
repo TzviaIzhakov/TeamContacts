@@ -40,6 +40,7 @@ function onRemoveContact(contactId) {
   if (!conts) return <div>loading...</div>;
   return (
     <section>
+      <h1>Contacts:</h1>
       <ContactList
         contacts={conts}
         onUpdateContact={onUpdateContact}
