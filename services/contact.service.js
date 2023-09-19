@@ -10,6 +10,7 @@ export const contactService = {
   remove,
   save,
   getEmptyContact,
+  getById
   //   getDefaultFilter,
 };
 
@@ -33,6 +34,10 @@ function get(contactId) {
     // contact = _setNextPrevCar_id(contact);
     return contact;
   });
+}
+
+function getById(contactId) {
+  return storageService.get(CONTACT_KEY, contactId)
 }
 
 function remove(contactId) {
